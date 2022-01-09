@@ -1,0 +1,51 @@
+<h1>Bot del Amor</h1>
+<hr> 
+
+<div class="row">
+    <div class="col">
+        <h3>Pregunta</h3>
+        <hr>
+        <ul>
+            <li *ngFor="let gente of array">
+                {{gente}}
+
+
+                <div *ngIf="array !==[]; else noBorrado">
+                    <h3>Si la ama y mucho, que fastidio este man 
+                        gastando el tiempo en estas pendejadas.
+                    </h3> 
+                        
+                    </div>
+                    
+                    <ng-template #noBorrado>
+                    
+                        <h3>No se ha borrado nada.</h3> 
+                    
+                    </ng-template>
+
+
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <h3>De quien quiere saber la verdad?</h3>
+        <hr>
+         <form (ngSubmit)="agregar()">
+            <input 
+            type="text" 
+            placeholder="Nombre y Pregunta"
+            name="nombre"
+            [(ngModel)]="nuevo"
+            >
+      
+        
+
+            <button type="submit">
+                Enviar
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
